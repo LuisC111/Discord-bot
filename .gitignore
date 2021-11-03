@@ -1,0 +1,13 @@
+# Bot Configuration
+config.js
+
+# Node modules
+node_modules
+package-lock.json
+yarn.lock
+
+# IDE
+.vscode
+
+# Mac OS files
+.DS_Store
