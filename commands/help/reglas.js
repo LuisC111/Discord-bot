@@ -4,17 +4,17 @@ module.exports = {
   aliases: ["rules"],
   run: async(client, message, args, discord) => {
    
-    const btn1 = new discord.MessageButton()
+    const btn = new Discord.MessageButton()
   
       .setCustomId("acp")
       .setLabel("Acepto")
       .setStyle("SUCCESS");
-    const btn2 = new discord.MessageButton()
+    const btn2 = new Discord.MessageButton()
       .setCustomId("deg")
       .setLabel("No Acepto")
       .setStyle("DANGER");
  
-    const fila = new discord.MessageActionRow().addComponents(btn1, btn2);
+    const fila = new Discord.MessageActionRow().addComponents(btn, btn2);
 
   
 
