@@ -17,7 +17,7 @@ let queue = client.distube.getQueue(message.guildId);
 if (!message.guild.me.voice.channel) {
   return message.reply(`>>> No hay nada sonando 😶`);
 }
-console.log(queue)
+
 message.reply(`>>> Canción saltada`) && queue.skip();
 
 }

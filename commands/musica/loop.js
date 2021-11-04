@@ -1,6 +1,6 @@
 module.exports = {
     name: "repeat",
-    aliases: ["loop", "rp"],
+    aliases: ["loop", "rp", "ciclo"],
     inVoiceChannel: true,
     run: async (client, message, args) => {
         const queue = client.distube.getQueue(message)
