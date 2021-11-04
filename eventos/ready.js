@@ -4,7 +4,7 @@ const Discord = require("discord.js");
 
 module.exports = async  (client, message, args) => {
 
-        let cmds = client.comandos.size
+        let cmds = client.commands.size
         let users = client.users.cache.size
         let servers = client.guilds.cache.size
         let mensajes = ["comando", "comandos", "usuario", "usuarios", "servidor", "servidores"]
