@@ -9,6 +9,6 @@ module.exports = {
         if (queue.playing.paused) return message.channel.send(`${client.emotes.error} | ¡Ya está pausado!`)
         
         queue.pause()
-        message.channel.send("Pause la canción para ti :)")
+        message.channel.send(`${client.emotes.stop} | Pause la canción para ti :)`)
     }
 }

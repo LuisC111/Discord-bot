@@ -27,6 +27,7 @@ module.exports = {
                 break
         }
         if (mode === null) return message.channel.send(`${client.emotes.error} | ¡Debes especificar un modo de repetición ('off', 'cancion', 'cola')!`)
+        if (!mode == 0 || !mode == 1 || !mode == 2) return message.channel.send(`${client.emotes.error} | ¡Debes especificar un modo de repetición ('off', 'cancion', 'cola')!`)
         mode = queue.setRepeatMode(mode)
         mode = mode ? mode === 2 ? "Repetir cola" : "Repetir canción" : "Off"
         message.channel.send(`${client.emotes.repeat} | Modo ciclo puesto en: \`${mode}\``)
