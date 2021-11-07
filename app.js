@@ -5,6 +5,7 @@ const client = new Discord.Client({
   intents: 641,
 });
 const fs = require('fs');
+
 let {readdirSync} = require('fs');
 const { join } = require('path');
 const express = require("express"); 
@@ -13,6 +14,8 @@ let mysql = require('mysql');
 const colors = require('./colors.json')
 const gstranscript = require('gs-transcript')
 const SpotifyPlugin = require("@distube/spotify")
+const { REST } = require('@discordjs/rest');
+const { Routes } = require('discord-api-types/v9');
 
 
 client.ticketcooldown = new Set()
@@ -24,6 +27,7 @@ client.aliases = new Discord.Collection()
 client.emotes = client.config.emoji
 client.categories = new Discord.Collection();
 
+const clientId = client.config.botId;
 
 const distube = new Distube(client, {
   emitNewSongOnly: false,
@@ -50,6 +54,7 @@ for(const file of readdirSync('./comandos/')) {
 
 
 //CONTROLADOR COMANDOS OP
+const comandos = [];
 const commandsS = readdirSync('./commands');//lees el directorio
 for (const dir of commandsS) {
   const commands = readdirSync(`./commands/${dir}/`).filter((file) =>
@@ -60,8 +65,9 @@ for (const dir of commandsS) {
     const cmd = require(`./commands/${dir}/${file}`);//los requieres
     client.commands.set(cmd.name, cmd);
     if (cmd.aliases) cmd.aliases.forEach(alias => client.aliases.set(alias, cmd.name))
-  }
+    }
 }
+
 
 // CONTROLADOR DE EVENTOS 
 
@@ -80,6 +86,7 @@ for(const file of readdirSync('./eventos/')) {
   }
 
 
+  
 
 
 //Base de datos

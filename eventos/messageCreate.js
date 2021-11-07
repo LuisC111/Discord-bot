@@ -8,7 +8,18 @@ module.exports = async (client, message) => {
     if (message.author.bot) return;
     if (!message.guild) return;
     
-    const prefix = client.config.prefix
+    const db = mysql.createConnection({
+        host: client.config.host,
+        user: client.config.user,
+        database: client.config.database
+    });  
+
+    const server = message.guild.id;
+
+    db.query(`SELECT * FROM prefix WHERE serverId = '${server}'`, async (err, rows) => {
+        if (err) throw err;
+        const prefix = rows.length <= 0 ? client.config.prefix : rows[0].prefix;
+    
 
     
 
@@ -33,6 +44,6 @@ module.exports = async (client, message) => {
         console.error(e)
         message.reply(`Error: ${e}`)
     }
-
+    })
 };
   
