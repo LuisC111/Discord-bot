@@ -25,6 +25,7 @@ client.config = require('./config.js');
 client.commands = new Discord.Collection()
 client.aliases = new Discord.Collection()
 client.emotes = client.config.emoji
+client.lyrics = client.config.lyricsToken;
 client.categories = new Discord.Collection();
 
 const clientId = client.config.botId;
