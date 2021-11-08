@@ -1,0 +1,52 @@
+module.exports = {
+	token: "TOKEN_DISCORD_BOT", 
+	lyricsToken: "TOKEN_LYRICS",
+	prefix: "BOT_PREFIX",
+	ServerID: "YOUR_SERVER_ID",
+	botId: "BOT_ID",
+	host: "DB_HOST",
+	user: "DB_USER",
+	password: "DB_PASSWORD",
+	database: "DB_NAME",
+	
+	/* Emebeds predeterminados */
+	embed: {
+		color: "#0091fc", 
+		footer: "TastyMen | Los peyes" 
+	},
+	emoji: {
+        play: "▶️",
+        stop: "⏹️",
+        queue: "📄",
+        success: "☑️",
+        repeat: "🔁",
+        error: "❌"
+    },
+	/* Informacion de owner */
+	owner: {
+		id: "OWNER1_ID", 
+		name: "OWNER1_NAME_DISCRIMINATOR"
+	},
+	owner2: {
+		id: "OWNER2_ID", 
+		name: "OWNER1_NAME_DISCRIMINATOR"
+	},
+    others: {
+		github: "https://github.com/luisc111",
+	},
+	/* Status */
+	status: [
+		{
+			name: "@TastyMen esta en {serversCount} servidores",
+			type: "LISTENING"
+		},
+		{
+			name: "Unete https://discord.gg/BM6rfXuAJB | Servidor oficial",
+			type: "PLAYING"
+		},
+		{
+			name: "Bot oficial de Los Peyes",
+			type: "WATCHING"
+		},
+	]
+};
