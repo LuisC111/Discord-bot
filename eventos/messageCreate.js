@@ -3,7 +3,7 @@ const distube = require('distube');
 let mysql = require('mysql');
 
 
-module.exports = async (client, message) => {
+module.exports = async (client, message, args) => {
     
     if (message.author.bot) return;
     if (!message.guild) return;
@@ -32,11 +32,18 @@ module.exports = async (client, message) => {
         return message.channel.send({ embeds: [embed] });
     }
 
-    if (!message.content.startsWith(prefix)) return
+
+    if (!message.content.startsWith(prefix)) return 
     const args = message.content.slice(prefix.length).trim().split(/ +/g)
     const command = args.shift().toLowerCase()
     const cmd = client.commands.get(command) || client.commands.get(client.aliases.get(command))
-    if (!cmd) return
+    
+    if (!cmd) return;
+
+ 
+    
+ 
+
     if (cmd.inVoiceChannel && !message.member.voice.channel) return message.channel.send(`${client.emotes.error} | Debes estar en un canal de voz!`)
     try {
         cmd.run(client, message, args)
