@@ -49,7 +49,7 @@ module.exports = async (client, message, args) => {
         cmd.run(client, message, args)
     } catch (e) {
         console.error(e)
-        message.reply(`Error: ${e}`)
+        message.reply(`== Error: ${e}`)
     }
     })
 };
